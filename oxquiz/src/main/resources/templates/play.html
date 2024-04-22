@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>OX 퀴즈 게임 : PLAY</h1>
+    <div>퀴즈</div>
+    <div>
+        <input type="text" name="quiz" th:field="${dto.quiz}">
+    </div>
+    <form th:action="@{/quiz/check}" method="post">
+        <input type="hidden" name="answer" th:field="${dto.answer}">
+        <input type="hidden" name="selectAnswer" value="O">
+        <input type="submit" value="O">
+    </form>
+    <form th:action="@{/quiz/check}" method="post">
+        <input type="hidden" name="answer" th:field="${dto.answer}">
+        <input type="hidden" name="selectAnswer" value="X">
+        <input type="submit" value="X">
+    </form>
+
+
+</body>
+</html>
